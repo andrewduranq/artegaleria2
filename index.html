@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Estilos de la barra de navegación */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Estilos de las secciones */
+        .seccion {
+            display: none;
+            padding: 2rem;
+        }
+        .seccion.activa {
+            display: block;
+        }
+        /* Estilos específicos para la galería de fotos */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .galeria img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+<div class="seccion" id="inicio">
+    <h1>Bienvenido a nuestra Galería de Arte</h1>
+    <p>Explora obras de artistas talentosos.</p>
+</div>
+<div class="seccion" id="galeria">
+    <h2>Galería de Fotos</h2>
+    <div class="galeria">
+        <img src="arte1.png" alt="Obra de arte 1">
+        <img src="arte2.png" alt="Obra de arte 2">
+        <img src="arte3.png" alt="Obra de arte 3">
+    </div>
+</div>
+<div class="seccion" id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes alguna pregunta? Contáctanos:</p>
+    <p>Email: info@galeriadearte.com</p>
+    <p>Teléfono: +34 123 456 789</p>
+</div>
+<script>
+    const enlaces = document.querySelectorAll('nav a');
+    const secciones = document.querySelectorAll('.seccion');
+
+    enlaces.forEach(enlace => {
+        enlace.addEventListener('click', e => {
+            e.preventDefault();
+            const seccionId = enlace.getAttribute('href').substring(1);
+            secciones.forEach(seccion => {
+                seccion.classList.remove('activa');
+                if (seccion.id === seccionId) {
+                    seccion.classList.add('activa');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

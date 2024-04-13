@@ -1,0 +1,45 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#inicio, #galeria, #contacto {
+    padding: 40px;
+    text-align: center;
+}
+
+#inicio h2, #galeria h2, #contacto h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+#inicio p, #galeria p, #contacto p {
+    font-size: 16px;
+    color: #666;
+}
